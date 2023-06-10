@@ -1,19 +1,16 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import OpenCVComponent from './components/OpenCVComponent.tsx';
+import OpenCVComponent from './components/OpenCVComponent';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import WebcamComponent from './components/WebcamComponent.tsx';
+import WebcamComponent from './components/WebcamComponent';
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/">
-          <OpenCVComponent />
-        </Route>
-        <Route path="/webcam">
-          <WebcamComponent />
-        </Route>
+        <Route path="/" element={<OpenCVComponent />} />
+        <Route path="/webcam" element={<WebcamComponent />} />
       </Routes>
     </Router>
   );
