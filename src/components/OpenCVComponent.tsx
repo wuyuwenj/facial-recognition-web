@@ -1,9 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
+// import { useHistory } from "react-router-dom";
+
 // import haarcascade_frontalface_default from '../opencv_data/haarcascade_frontalface_default.xml';
 // import WebcamComponent from "./WebcamComponent";
 import "./style.css";
 declare const cv: any;
 const OpenCVComponent: React.FC = () => {
+  // const history = useHistory();
+
+  const openNewWindow = () => {
+    window.open("/webcam", "_blank");
+  };
+
   async function loadDataFile(cvFilePath: string, url: string) {
     // see https://docs.opencv.org/master/utils.js
     const response = await fetch(url);
@@ -113,6 +121,9 @@ const OpenCVComponent: React.FC = () => {
 
   return (
     <div>
+      <div>
+      <button onClick={openNewWindow}>GO to Webcam</button>
+    </div>
       <h1 className="mid">Upload Image Here</h1>
       {/* <p id="status">OpenCV.js is loading...</p> */}
       <div>
