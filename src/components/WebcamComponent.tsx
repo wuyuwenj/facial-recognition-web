@@ -8,7 +8,7 @@ const WebcamComponent: React.FC = () => {
   const canvasElementRef = useRef<HTMLCanvasElement | null>(null);
   const imgElementRef = useRef<HTMLImageElement | null>(null);
 
-  const [webcamEnabled, setWebcamEnabled] = useState(true);
+  const [webcamEnabled, setWebcamEnabled] = useState<boolean>(true);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [mat, setMat] = useState<any>(null);
   const [displayMode, setDisplayMode] = useState<"img" | "canvas">("img");

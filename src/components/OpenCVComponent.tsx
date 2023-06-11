@@ -14,9 +14,9 @@ const OpenCVComponent: React.FC = () => {
 
   async function loadDataFile(cvFilePath: string, url: string) {
     // see https://docs.opencv.org/master/utils.js
-    const response = await fetch(url);
-    const buffer = await response.arrayBuffer();
-    const data = new Uint8Array(buffer);
+    const response:Response = await fetch(url);
+    const buffer: ArrayBuffer = await response.arrayBuffer();
+    const data:Uint8Array = new Uint8Array(buffer);
     cv.FS_createDataFile("/", cvFilePath, data, true, false, false);
   }
   useEffect(() => {
